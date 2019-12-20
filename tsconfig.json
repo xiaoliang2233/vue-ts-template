@@ -8,9 +8,8 @@
     }
   },
   "include": [
-    "lib/**/*",
-    "types/*",
-    "index.ts"
+    "index.ts",
+    "lib/**/*"
   ],
   "exclude": [
     "node_modules"

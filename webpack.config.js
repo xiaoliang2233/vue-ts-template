@@ -1,6 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development'
 const htmlPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const path = require('path')
 const config = {
     mode: isDev ? 'development' : 'production',
     entry: './index.ts',
@@ -27,9 +28,13 @@ const config = {
         ]
     },
     resolve: {
-        extensions: [".js", ".ts", ".vue"],
+        modules: [
+            'node_modules',
+            // path.resolve(__dirname, './lib')
+        ],
+        extensions: [".vue", ".js", ".ts"],
         alias: {
-            "@": "./lib"
+            "@": path.resolve(__dirname, './lib')
         }
     },
     devtool: "source-map",
