@@ -5,10 +5,11 @@
 </template>
 <script lang="ts">
     import vue from 'vue'
-    import { Component, Prop, Model, Provide} from 'vue-property-decorator'
+    import { Component, Prop, Model, Provide } from 'vue-property-decorator'
     @Component({
 
     })
     export default class Header extends vue {
+        @Prop() value: string = '1'
     }
 </script>

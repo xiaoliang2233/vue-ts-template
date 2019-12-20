@@ -19,7 +19,8 @@
             </div>
         </div>
         <div>
-
+            <h2> 使用Model, 值的名字: formData.address, 值: {{formData.address}}</h2>
+            <sg-input v-model="formData.address"></sg-input>
         </div>
     </div>
 </template>
@@ -27,16 +28,18 @@
     import vue from 'vue'
     import { Component, Model, Provide, Watch } from 'vue-property-decorator'
     import Header from '@/components/header.vue'
+    import SgInput from '@/components/sg-input.vue'
     @Component({
         components: {
-            Header
+            Header,
+            SgInput
         }
     })
     export default class app extends vue {
         title: string  = ''
         formData = {
             id: 0,
-            address: ''
+            address: 'dasdas'
         }
         @Provide() value = ''
         @Watch('formData.id') handleIdChange(value, oldValue) {
